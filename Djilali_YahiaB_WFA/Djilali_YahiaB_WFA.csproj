@@ -89,5 +89,14 @@
   <ItemGroup>
     <None Include="background2.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="gokuBase.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="gokuDroite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="gokuGauche.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
