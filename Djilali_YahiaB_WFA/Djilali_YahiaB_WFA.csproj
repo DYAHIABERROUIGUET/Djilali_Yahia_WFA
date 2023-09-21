@@ -96,10 +96,10 @@
     <None Include="backgroundDebut.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="backgroundDebut.png" />
+    <None Include="backgroundMontagne.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="backgroundMontagne.png" />
+    <None Include="gokuBaseGauche.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
