@@ -14,8 +14,9 @@ namespace Djilali_YahiaB_WFA
     public partial class Form1 : Form
     {
         bool startBegin = false;
+
         int temps = 0;
-        int gokuPhase = 0;
+        bool gravité = false;
         public Form1()
         {
             InitializeComponent();
@@ -36,9 +37,9 @@ namespace Djilali_YahiaB_WFA
         private void horloge_Tick(object sender, EventArgs e)
         {
             temps++;
-            if (gokuPhase == 1)
+            if (gravité == true)
             {
-                goku.Left = goku.Left + 10;
+                goku.Top -= 5;
             }
 
         }
@@ -65,29 +66,25 @@ namespace Djilali_YahiaB_WFA
             if (e.KeyCode == Keys.D)
             {
                 goku.Load("C:\\Users\\djila\\OneDrive\\Bureau\\ProjectPurple\\Djilali_YahiaB_WFA\\gokuBase.png");
-                gokuPhase = 0;
             }
             else if (e.KeyCode == Keys.Q)
             {
-                goku.Load("C:\\Users\\djila\\OneDrive\\Bureau\\ProjectPurple\\Djilali_YahiaB_WFA\\gokuBase.png");
-                gokuPhase = 0;
+                goku.Load("C:\\Users\\djila\\OneDrive\\Bureau\\ProjectPurple\\Djilali_YahiaB_WFA\\gokuBaseGauche.png");
             }
         }
 
         private void keyIsDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.D)
+            this.DoubleBuffered = true; //pour la superposition d'image dans le form  && gravité == false
+            if (e.KeyCode == Keys.D )
             {
                 goku.Load("C:\\Users\\djila\\OneDrive\\Bureau\\ProjectPurple\\Djilali_YahiaB_WFA\\gokuDroite.png");
                 goku.Left = goku.Left + 10;
             }else if (e.KeyCode == Keys.Q)
             {
-                if(gokuPhase == 0)
-                {
-                    goku.Load("C:\\Users\\djila\\OneDrive\\Bureau\\ProjectPurple\\Djilali_YahiaB_WFA\\gokuGauche.png");
-                    gokuPhase = 1;
-                }
                 goku.Left = goku.Left - 10;
+                goku.Load("C:\\Users\\djila\\OneDrive\\Bureau\\ProjectPurple\\Djilali_YahiaB_WFA\\gokuGauche.png");
+
             }
         }
     }
