@@ -63,9 +63,9 @@ namespace Djilali_YahiaB_WFA.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap backgroundDebut {
+        internal static System.Drawing.Bitmap backgroundDebutBT {
             get {
-                object obj = ResourceManager.GetObject("backgroundDebut", resourceCulture);
+                object obj = ResourceManager.GetObject("backgroundDebutBT", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
