@@ -39,6 +39,10 @@ namespace Djilali_YahiaB_WFA
         {
             score.Text = "Score : " + nombreDragonBall;
             temps++;
+            if (goku.Left > 1470 && nombreDragonBall == 3)
+            {
+                niveau2(sender, e);
+            }
             if (goku.Bounds.IntersectsWith(dragonBall1.Bounds))
             {
                 dragonBall1.Visible = false;
@@ -115,6 +119,18 @@ namespace Djilali_YahiaB_WFA
             gravité = true;
             }
 
+        }
+        private void niveau2(object sender, EventArgs e) //niveau2 initialisation
+        {
+            goku.Left = 10;
+            pictureBox1.Left = 1600;
+            pictureBox2.Left = 1600;
+            pictureBox3.Left = 1600;
+            pictureBox4.Left = 1600;
+            pictureBox5.Left = 0;
+            sol.Left = 1600;
+            kintoUn.Visible = false;
+            kintoUn.Left = 1600;
         }
         private void consignes(object sender, EventArgs e) //prise d'informations du jeux 
         {

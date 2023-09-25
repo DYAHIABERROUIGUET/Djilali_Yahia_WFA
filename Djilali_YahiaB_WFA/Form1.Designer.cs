@@ -73,7 +73,7 @@
             this.goku.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.goku.ErrorImage = null;
             this.goku.Image = global::Djilali_YahiaB_WFA.Properties.Resources.gokuBaseGauche;
-            this.goku.Location = new System.Drawing.Point(132, 357);
+            this.goku.Location = new System.Drawing.Point(132, 397);
             this.goku.Name = "goku";
             this.goku.Size = new System.Drawing.Size(63, 97);
             this.goku.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -175,7 +175,7 @@
             // pictureBox5
             // 
             this.pictureBox5.Image = global::Djilali_YahiaB_WFA.Properties.Resources.sol1;
-            this.pictureBox5.Location = new System.Drawing.Point(1047, 217);
+            this.pictureBox5.Location = new System.Drawing.Point(1047, 216);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(418, 61);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
