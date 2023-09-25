@@ -101,5 +101,20 @@
   <ItemGroup>
     <None Include="sol1.PNG" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="kitoUn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="nuageMagique.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dragonBall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dragonBall %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dragonBall %282%29.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

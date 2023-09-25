@@ -73,6 +73,36 @@ namespace Djilali_YahiaB_WFA.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap dragonBall {
+            get {
+                object obj = ResourceManager.GetObject("dragonBall", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap dragonBall__1_ {
+            get {
+                object obj = ResourceManager.GetObject("dragonBall (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap dragonBall__2_ {
+            get {
+                object obj = ResourceManager.GetObject("dragonBall (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap gokuBase {
             get {
                 object obj = ResourceManager.GetObject("gokuBase", resourceCulture);
@@ -106,6 +136,26 @@ namespace Djilali_YahiaB_WFA.Properties {
         internal static System.Drawing.Bitmap gokuGauche {
             get {
                 object obj = ResourceManager.GetObject("gokuGauche", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap kitoUn {
+            get {
+                object obj = ResourceManager.GetObject("kitoUn", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap nuageMagique {
+            get {
+                object obj = ResourceManager.GetObject("nuageMagique", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

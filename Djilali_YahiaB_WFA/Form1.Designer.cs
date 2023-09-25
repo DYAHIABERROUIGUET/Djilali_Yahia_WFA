@@ -40,6 +40,11 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.kintoUn = new System.Windows.Forms.PictureBox();
+            this.dragonBall1 = new System.Windows.Forms.PictureBox();
+            this.score = new System.Windows.Forms.Label();
+            this.dragonBall2 = new System.Windows.Forms.PictureBox();
+            this.dragonBall3 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.goku)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.options)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxConsignes)).BeginInit();
@@ -50,6 +55,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kintoUn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dragonBall1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dragonBall2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dragonBall3)).BeginInit();
             this.SuspendLayout();
             // 
             // horloge
@@ -117,7 +126,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Djilali_YahiaB_WFA.Properties.Resources.sol1;
-            this.pictureBox1.Location = new System.Drawing.Point(378, 368);
+            this.pictureBox1.Location = new System.Drawing.Point(427, 433);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(219, 61);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -129,7 +138,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::Djilali_YahiaB_WFA.Properties.Resources.sol1;
-            this.pictureBox2.Location = new System.Drawing.Point(511, 510);
+            this.pictureBox2.Location = new System.Drawing.Point(715, 504);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(331, 61);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -141,7 +150,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = global::Djilali_YahiaB_WFA.Properties.Resources.sol1;
-            this.pictureBox3.Location = new System.Drawing.Point(593, 188);
+            this.pictureBox3.Location = new System.Drawing.Point(1010, 12);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(331, 61);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -152,8 +161,9 @@
             // 
             // pictureBox4
             // 
+            this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox4.Image = global::Djilali_YahiaB_WFA.Properties.Resources.sol1;
-            this.pictureBox4.Location = new System.Drawing.Point(844, 282);
+            this.pictureBox4.Location = new System.Drawing.Point(335, 91);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(331, 61);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -165,7 +175,7 @@
             // pictureBox5
             // 
             this.pictureBox5.Image = global::Djilali_YahiaB_WFA.Properties.Resources.sol1;
-            this.pictureBox5.Location = new System.Drawing.Point(1047, 413);
+            this.pictureBox5.Location = new System.Drawing.Point(1047, 217);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(418, 61);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -174,6 +184,66 @@
             this.pictureBox5.Tag = "sol";
             this.pictureBox5.Visible = false;
             // 
+            // kintoUn
+            // 
+            this.kintoUn.AccessibleName = "kitoUn";
+            this.kintoUn.BackColor = System.Drawing.Color.Transparent;
+            this.kintoUn.Image = global::Djilali_YahiaB_WFA.Properties.Resources.nuageMagique;
+            this.kintoUn.Location = new System.Drawing.Point(726, 413);
+            this.kintoUn.Name = "kintoUn";
+            this.kintoUn.Size = new System.Drawing.Size(102, 65);
+            this.kintoUn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.kintoUn.TabIndex = 11;
+            this.kintoUn.TabStop = false;
+            this.kintoUn.Visible = false;
+            // 
+            // dragonBall1
+            // 
+            this.dragonBall1.BackColor = System.Drawing.Color.Transparent;
+            this.dragonBall1.Image = global::Djilali_YahiaB_WFA.Properties.Resources.dragonBall;
+            this.dragonBall1.Location = new System.Drawing.Point(396, 35);
+            this.dragonBall1.Name = "dragonBall1";
+            this.dragonBall1.Size = new System.Drawing.Size(40, 38);
+            this.dragonBall1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.dragonBall1.TabIndex = 12;
+            this.dragonBall1.TabStop = false;
+            this.dragonBall1.Visible = false;
+            // 
+            // score
+            // 
+            this.score.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.score.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.score.Location = new System.Drawing.Point(34, 26);
+            this.score.Name = "score";
+            this.score.Size = new System.Drawing.Size(161, 33);
+            this.score.TabIndex = 13;
+            this.score.Text = "score : 0";
+            this.score.Visible = false;
+            // 
+            // dragonBall2
+            // 
+            this.dragonBall2.BackColor = System.Drawing.Color.Transparent;
+            this.dragonBall2.Image = global::Djilali_YahiaB_WFA.Properties.Resources.dragonBall__2_;
+            this.dragonBall2.Location = new System.Drawing.Point(984, 433);
+            this.dragonBall2.Name = "dragonBall2";
+            this.dragonBall2.Size = new System.Drawing.Size(40, 38);
+            this.dragonBall2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.dragonBall2.TabIndex = 14;
+            this.dragonBall2.TabStop = false;
+            this.dragonBall2.Visible = false;
+            // 
+            // dragonBall3
+            // 
+            this.dragonBall3.BackColor = System.Drawing.Color.Transparent;
+            this.dragonBall3.Image = global::Djilali_YahiaB_WFA.Properties.Resources.dragonBall__1_;
+            this.dragonBall3.Location = new System.Drawing.Point(1135, 149);
+            this.dragonBall3.Name = "dragonBall3";
+            this.dragonBall3.Size = new System.Drawing.Size(40, 38);
+            this.dragonBall3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.dragonBall3.TabIndex = 15;
+            this.dragonBall3.TabStop = false;
+            this.dragonBall3.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -181,6 +251,11 @@
             this.BackgroundImage = global::Djilali_YahiaB_WFA.Properties.Resources.debutBackground;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1477, 688);
+            this.Controls.Add(this.dragonBall3);
+            this.Controls.Add(this.dragonBall2);
+            this.Controls.Add(this.score);
+            this.Controls.Add(this.dragonBall1);
+            this.Controls.Add(this.kintoUn);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox3);
@@ -207,6 +282,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kintoUn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dragonBall1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dragonBall2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dragonBall3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -224,6 +303,11 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox kintoUn;
+        private System.Windows.Forms.PictureBox dragonBall1;
+        private System.Windows.Forms.Label score;
+        private System.Windows.Forms.PictureBox dragonBall2;
+        private System.Windows.Forms.PictureBox dragonBall3;
     }
 }
 

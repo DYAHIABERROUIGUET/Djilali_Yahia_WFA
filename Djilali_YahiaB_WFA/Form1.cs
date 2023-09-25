@@ -13,9 +13,9 @@ namespace Djilali_YahiaB_WFA
 {
     public partial class Form1 : Form
     {
-        bool startBegin = false, jump = false;
+        bool startBegin = false, jump = false, gokuDroite = false, gokuGauche = false;
 
-        int temps = 0, saut = 7;
+        int temps = 0, saut = 10, kintoUNRestart = 0, nombreDragonBall = 0;
         bool gravité = false, startGame = false;
         public Form1()
         {
@@ -37,11 +37,48 @@ namespace Djilali_YahiaB_WFA
 
         private void horloge_Tick(object sender, EventArgs e)
         {
+            score.Text = "Score : " + nombreDragonBall;
             temps++;
+            if (goku.Bounds.IntersectsWith(dragonBall1.Bounds))
+            {
+                dragonBall1.Visible = false;
+                nombreDragonBall += 1;
+                dragonBall1.Left = 5000;
+            }
+            if (goku.Bounds.IntersectsWith(dragonBall2.Bounds))
+            {
+                dragonBall2.Visible = false;
+                nombreDragonBall += 1;
+                dragonBall2.Left = 5000;
+            }
+            if (goku.Bounds.IntersectsWith(dragonBall3.Bounds))
+            {
+                dragonBall3.Visible = false;
+                nombreDragonBall += 1;
+                dragonBall3.Left = 5000;
+            }
+            if (goku.Bounds.IntersectsWith(kintoUn.Bounds) && goku.Bottom - 1 == kintoUn.Top)
+            {
+                gravité = false;
+                goku.Top -= 5;
+                kintoUn.Top -= 5;
+                kintoUNRestart += 5;
+            }else if (kintoUNRestart > 0 )
+            {
+                kintoUn.Top += 5;
+                kintoUNRestart -= 5 ;
+            }
+            if (gokuDroite == true)
+            {
+                goku.Left = goku.Left + 10;
+            }else if (gokuGauche == true)
+            {
+                goku.Left = goku.Left - 10;
+            }
             if (jump == true && saut == 0)
             {
                 jump = false;
-                saut = 7;
+                saut = 10;
             } else if (jump == true && saut > 0)
             {
                 saut -= 1;
@@ -97,6 +134,11 @@ namespace Djilali_YahiaB_WFA
             pictureBox4.Visible = true;
             pictureBox5.Visible = true;
             sol.Visible = true;
+            kintoUn.Visible = true;
+            dragonBall1.Visible = true;
+            score.Visible = true;
+            dragonBall2.Visible = true;
+            dragonBall3.Visible = true;
         }
 
         private void options_Click(object sender, EventArgs e) //quand on rentre dans le menu option
@@ -109,9 +151,11 @@ namespace Djilali_YahiaB_WFA
             if (e.KeyCode == Keys.D)
             {
                 goku.Load("C:\\Users\\djila\\OneDrive\\Bureau\\ProjectPurple\\Djilali_YahiaB_WFA\\gokuBase.png");
+                gokuDroite = false;
             }
             else if (e.KeyCode == Keys.Q)
             {
+                gokuGauche = false;
                 goku.Load("C:\\Users\\djila\\OneDrive\\Bureau\\ProjectPurple\\Djilali_YahiaB_WFA\\gokuBaseGauche.png");
             }
         }
@@ -122,10 +166,11 @@ namespace Djilali_YahiaB_WFA
             if (e.KeyCode == Keys.D )
             {
                 goku.Load("C:\\Users\\djila\\OneDrive\\Bureau\\ProjectPurple\\Djilali_YahiaB_WFA\\gokuDroite.png");
-                goku.Left = goku.Left + 10;
+                gokuDroite = true;
+
             }else if (e.KeyCode == Keys.Q)
             {
-                goku.Left = goku.Left - 10;
+                gokuGauche = true;
                 goku.Load("C:\\Users\\djila\\OneDrive\\Bureau\\ProjectPurple\\Djilali_YahiaB_WFA\\gokuGauche.png");
 
             }else if (e.KeyCode == Keys.Space && gravité == false)
