@@ -63,9 +63,9 @@ namespace Djilali_YahiaB_WFA.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap backgroundDebutBT {
+        internal static System.Drawing.Bitmap debutBackground {
             get {
-                object obj = ResourceManager.GetObject("backgroundDebutBT", resourceCulture);
+                object obj = ResourceManager.GetObject("debutBackground", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -106,6 +106,16 @@ namespace Djilali_YahiaB_WFA.Properties {
         internal static System.Drawing.Bitmap gokuGauche {
             get {
                 object obj = ResourceManager.GetObject("gokuGauche", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sol1 {
+            get {
+                object obj = ResourceManager.GetObject("sol1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
