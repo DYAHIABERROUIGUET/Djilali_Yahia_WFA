@@ -1,6 +1,6 @@
 ﻿namespace Djilali_YahiaB_WFA
 {
-    partial class Form1
+    partial class attaque1
     {
         /// <summary>
         /// Variable nécessaire au concepteur.
@@ -45,6 +45,7 @@
             this.score = new System.Windows.Forms.Label();
             this.dragonBall2 = new System.Windows.Forms.PictureBox();
             this.dragonBall3 = new System.Windows.Forms.PictureBox();
+            this.attaque = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.goku)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.options)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxConsignes)).BeginInit();
@@ -59,6 +60,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dragonBall1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dragonBall2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dragonBall3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.attaque)).BeginInit();
             this.SuspendLayout();
             // 
             // horloge
@@ -72,7 +74,7 @@
             this.goku.BackColor = System.Drawing.Color.Transparent;
             this.goku.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.goku.ErrorImage = null;
-            this.goku.Image = global::Djilali_YahiaB_WFA.Properties.Resources.gokuBaseGauche;
+            this.goku.Image = global::Djilali_YahiaB_WFA.Properties.Resources.gokuBase;
             this.goku.Location = new System.Drawing.Point(132, 397);
             this.goku.Name = "goku";
             this.goku.Size = new System.Drawing.Size(63, 97);
@@ -244,13 +246,26 @@
             this.dragonBall3.TabStop = false;
             this.dragonBall3.Visible = false;
             // 
-            // Form1
+            // attaque
+            // 
+            this.attaque.BackColor = System.Drawing.Color.Transparent;
+            this.attaque.Image = global::Djilali_YahiaB_WFA.Properties.Resources.Kamehameha1;
+            this.attaque.Location = new System.Drawing.Point(217, 363);
+            this.attaque.Name = "attaque";
+            this.attaque.Size = new System.Drawing.Size(261, 141);
+            this.attaque.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.attaque.TabIndex = 16;
+            this.attaque.TabStop = false;
+            this.attaque.Visible = false;
+            // 
+            // attaque1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Djilali_YahiaB_WFA.Properties.Resources.debutBackground;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1477, 688);
+            this.Controls.Add(this.attaque);
             this.Controls.Add(this.dragonBall3);
             this.Controls.Add(this.dragonBall2);
             this.Controls.Add(this.score);
@@ -267,7 +282,7 @@
             this.Controls.Add(this.pictureBoxConsignes);
             this.Controls.Add(this.start);
             this.ForeColor = System.Drawing.Color.Transparent;
-            this.Name = "Form1";
+            this.Name = "attaque1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Platformer";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keyIsDown);
@@ -286,6 +301,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dragonBall1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dragonBall2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dragonBall3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.attaque)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -308,6 +324,7 @@
         private System.Windows.Forms.Label score;
         private System.Windows.Forms.PictureBox dragonBall2;
         private System.Windows.Forms.PictureBox dragonBall3;
+        private System.Windows.Forms.PictureBox attaque;
     }
 }
 

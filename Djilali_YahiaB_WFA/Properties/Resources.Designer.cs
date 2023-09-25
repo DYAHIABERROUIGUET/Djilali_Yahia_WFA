@@ -103,6 +103,16 @@ namespace Djilali_YahiaB_WFA.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap goku__1_ {
+            get {
+                object obj = ResourceManager.GetObject("goku (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap gokuBase {
             get {
                 object obj = ResourceManager.GetObject("gokuBase", resourceCulture);
@@ -136,6 +146,26 @@ namespace Djilali_YahiaB_WFA.Properties {
         internal static System.Drawing.Bitmap gokuGauche {
             get {
                 object obj = ResourceManager.GetObject("gokuGauche", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Kamehameha {
+            get {
+                object obj = ResourceManager.GetObject("Kamehameha", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Kamehameha1 {
+            get {
+                object obj = ResourceManager.GetObject("Kamehameha1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

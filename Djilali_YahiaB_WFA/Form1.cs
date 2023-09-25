@@ -11,13 +11,13 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace Djilali_YahiaB_WFA
 {
-    public partial class Form1 : Form
+    public partial class attaque1 : Form
     {
         bool startBegin = false, jump = false, gokuDroite = false, gokuGauche = false;
 
-        int temps = 0, saut = 10, kintoUNRestart = 0, nombreDragonBall = 0;
-        bool gravité = false, startGame = false;
-        public Form1()
+        int temps = 0, saut = 10, kintoUNRestart = 0, nombreDragonBall = 0, meha = 10, attDroite = 1;
+        bool gravité = false, startGame = false, kameha = false;
+        public attaque1()
         {
             InitializeComponent();
         }
@@ -39,6 +39,33 @@ namespace Djilali_YahiaB_WFA
         {
             score.Text = "Score : " + nombreDragonBall;
             temps++;
+            if (kameha == true && attDroite > 0)
+            {
+                if (attDroite == 1)
+                {
+                    
+                    attaque.Visible = true;
+                    attaque.Left = goku.Left - 30;
+                    attaque.Top = goku.Top ;
+                    attDroite = 3;
+
+                }
+                else if (attDroite == 2)
+                {
+                    attaque.Left = goku.Left + 30;
+                    attDroite = 0;
+                }
+
+            }
+            if (attDroite == 3)
+            {
+                attaque.Left -= 5;
+                if (attaque.Left > 1600)
+                {
+                    attDroite = 1;
+                    attaque.Visible = false;
+                }
+            }
             if (goku.Left > 1470 && nombreDragonBall == 3)
             {
                 niveau2(sender, e);
@@ -183,16 +210,30 @@ namespace Djilali_YahiaB_WFA
             {
                 goku.Load("C:\\Users\\djila\\OneDrive\\Bureau\\ProjectPurple\\Djilali_YahiaB_WFA\\gokuDroite.png");
                 gokuDroite = true;
+                if (attDroite ==2)
+                {
+                    attDroite = 1;
+                }
 
             }else if (e.KeyCode == Keys.Q)
             {
                 gokuGauche = true;
                 goku.Load("C:\\Users\\djila\\OneDrive\\Bureau\\ProjectPurple\\Djilali_YahiaB_WFA\\gokuGauche.png");
+                if (attDroite == 1) ;
+                {
+                    attDroite = 2;
+                }
 
-            }else if (e.KeyCode == Keys.Space && gravité == false)
+            }
+            else if (e.KeyCode == Keys.Space && gravité == false)
             {
                     jump = true;
   
+            }
+            else if (e.KeyCode == Keys.E)
+            {
+                kameha = true;
+
             }
         }
     }
