@@ -63,6 +63,16 @@ namespace Djilali_YahiaB_WFA.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap blackGoku {
+            get {
+                object obj = ResourceManager.GetObject("blackGoku", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap debutBackground {
             get {
                 object obj = ResourceManager.GetObject("debutBackground", resourceCulture);
@@ -113,6 +123,16 @@ namespace Djilali_YahiaB_WFA.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap goku__1_1 {
+            get {
+                object obj = ResourceManager.GetObject("goku (1)1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap gokuBase {
             get {
                 object obj = ResourceManager.GetObject("gokuBase", resourceCulture);
@@ -153,9 +173,29 @@ namespace Djilali_YahiaB_WFA.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap image__2_ {
+            get {
+                object obj = ResourceManager.GetObject("image (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Kamehameha {
             get {
                 object obj = ResourceManager.GetObject("Kamehameha", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Kamehameha__1___1_ {
+            get {
+                object obj = ResourceManager.GetObject("Kamehameha (1) (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

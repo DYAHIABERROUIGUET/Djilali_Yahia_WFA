@@ -15,8 +15,71 @@ namespace Djilali_YahiaB_WFA
     {
         bool startBegin = false, jump = false, gokuDroite = false, gokuGauche = false;
 
-        int temps = 0, saut = 10, kintoUNRestart = 0, nombreDragonBall = 0, meha = 10, attDroite = 1;
+        int temps = 0, saut = 10, kintoUNRestart = 0, nombreDragonBall = 0, meha = 10, attDroite = 1, recul = 5;
         bool gravité = false, startGame = false, kameha = false;
+
+        private void secondTimer_Tick(object sender, EventArgs e)
+        {
+            if (kameha == true && attDroite != 0)
+            {
+                if (attDroite == 1)
+                {
+
+                    attaque.Visible = true;
+                    attaque.Left = goku.Left - 30;
+                    attaque.Top = goku.Top;
+                    attDroite = 3;
+                    goku.Load("C:\\Users\\djila\\OneDrive\\Bureau\\ProjectPurple\\Djilali_YahiaB_WFA\\Resources\\goku (1).png");
+                    attaque.Load("C:\\Users\\djila\\OneDrive\\Bureau\\ProjectPurple\\Djilali_YahiaB_WFA\\Resources\\Kamehameha.png");
+
+
+                }
+                else if (attDroite == 2)
+                {
+                    attaque.Load("C:\\Users\\djila\\OneDrive\\Bureau\\ProjectPurple\\Djilali_YahiaB_WFA\\Resources\\Kamehameha (1) (1).png");
+                    goku.Load("C:\\Users\\djila\\OneDrive\\Bureau\\ProjectPurple\\Djilali_YahiaB_WFA\\Resources\\image (2).png");
+                    attaque.Visible = true;
+                    attaque.Left = goku.Left - 150;
+                    attaque.Top = goku.Top;
+                    attDroite = 4;
+                }
+
+            }
+
+            if (attDroite == 3)
+            {
+                if (recul > 0)
+                {
+                    recul -= 1;
+                    goku.Left -= 20;
+                }
+                attaque.Left += 5;
+                if (attaque.Left > 1600 || attaque.Left < -600)
+                {
+                    attDroite = 1;
+                    kameha = false;
+                    attaque.Visible = false;
+                    recul = 5;
+                }
+            }
+            if (attDroite == 4)
+            {
+                if (recul > 0)
+                {
+                    recul -= 1;
+                    goku.Left += 20;
+                }
+                attaque.Left -= 5;
+                if (attaque.Left > 1600 || attaque.Left < -600)
+                {
+                    attDroite = 2;
+                    kameha = false;
+                    attaque.Visible = false;
+                    recul = 5;
+                }
+            }
+        }
+
         public attaque1()
         {
             InitializeComponent();
@@ -39,33 +102,6 @@ namespace Djilali_YahiaB_WFA
         {
             score.Text = "Score : " + nombreDragonBall;
             temps++;
-            if (kameha == true && attDroite > 0)
-            {
-                if (attDroite == 1)
-                {
-                    
-                    attaque.Visible = true;
-                    attaque.Left = goku.Left - 30;
-                    attaque.Top = goku.Top ;
-                    attDroite = 3;
-
-                }
-                else if (attDroite == 2)
-                {
-                    attaque.Left = goku.Left + 30;
-                    attDroite = 0;
-                }
-
-            }
-            if (attDroite == 3)
-            {
-                attaque.Left -= 5;
-                if (attaque.Left > 1600)
-                {
-                    attDroite = 1;
-                    attaque.Visible = false;
-                }
-            }
             if (goku.Left > 1470 && nombreDragonBall == 3)
             {
                 niveau2(sender, e);
@@ -156,8 +192,12 @@ namespace Djilali_YahiaB_WFA
             pictureBox4.Left = 1600;
             pictureBox5.Left = 0;
             sol.Left = 1600;
+            sol.Top = 1000;
+            pictureBox3.Top = 519;
+            pictureBox3.Left = -32;
             kintoUn.Visible = false;
             kintoUn.Left = 1600;
+
         }
         private void consignes(object sender, EventArgs e) //prise d'informations du jeux 
         {
@@ -210,7 +250,7 @@ namespace Djilali_YahiaB_WFA
             {
                 goku.Load("C:\\Users\\djila\\OneDrive\\Bureau\\ProjectPurple\\Djilali_YahiaB_WFA\\gokuDroite.png");
                 gokuDroite = true;
-                if (attDroite ==2)
+                if (attDroite ==2 && kameha == false)
                 {
                     attDroite = 1;
                 }
@@ -219,7 +259,7 @@ namespace Djilali_YahiaB_WFA
             {
                 gokuGauche = true;
                 goku.Load("C:\\Users\\djila\\OneDrive\\Bureau\\ProjectPurple\\Djilali_YahiaB_WFA\\gokuGauche.png");
-                if (attDroite == 1) ;
+                if (attDroite == 1 && kameha == false)
                 {
                     attDroite = 2;
                 }
@@ -230,7 +270,7 @@ namespace Djilali_YahiaB_WFA
                     jump = true;
   
             }
-            else if (e.KeyCode == Keys.E)
+            else if (e.KeyCode == Keys.E && kameha == false)
             {
                 kameha = true;
 
