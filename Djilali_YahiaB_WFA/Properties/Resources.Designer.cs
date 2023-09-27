@@ -123,6 +123,16 @@ namespace Djilali_YahiaB_WFA.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap dragonBall__4_ {
+            get {
+                object obj = ResourceManager.GetObject("dragonBall (4)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap goku__1_ {
             get {
                 object obj = ResourceManager.GetObject("goku (1)", resourceCulture);

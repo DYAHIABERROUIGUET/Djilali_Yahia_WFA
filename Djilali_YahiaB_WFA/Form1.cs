@@ -18,6 +18,7 @@ namespace Djilali_YahiaB_WFA
         int temps = 0, saut = 10, kintoUNRestart = 0, nombreDragonBall = 0, meha = 10, attDroite = 1, recul = 5,niveau = 0;
         bool gravité = false, startGame = false, kameha = false, ennemieActif = false, returnEnnemi = false, tryGameover = false;
 
+
         private void secondTimer_Tick(object sender, EventArgs e)
         {
             if (kameha == true && attDroite != 0)
@@ -173,6 +174,12 @@ namespace Djilali_YahiaB_WFA
                 nombreDragonBall += 1;
                 dragonBall4.Left = 5000;
             }
+            if (goku.Bounds.IntersectsWith(dragonBall5.Bounds))
+            {
+                dragonBall5.Visible = false;
+                nombreDragonBall += 1;
+                dragonBall5.Left = 5000;
+            }
             if (goku.Bounds.IntersectsWith(kintoUn.Bounds) && goku.Bottom - 1 == kintoUn.Top)
             {
                 gravité = false;
@@ -255,16 +262,36 @@ namespace Djilali_YahiaB_WFA
                 dragonBall3.Visible = false;
                 gameover(sender, e);
             }
+            if (goku.Left > 1470 && nombreDragonBall == 5)
+            {
+                niveauBoss(sender, e);
+                goku.Top = 65;
+                goku.Left = 10;
+
+                pictureBox5.Visible = false;
+                niveau = 3;
+                pictureBox2.Visible = false;
+                ennemiBG.Visible = false;
+                pictureBox3.Visible = false;
+                kintoUn.Visible = false;
+                ennemieActif = false;
+                pictureBox4.Visible = false;
+                pictureBox1.Visible = false;
+            }
 
         }
         private void niveau2(object sender, EventArgs e) //niveau2 initialisation
         {
+            score.Visible = true;
+            nombreDragonBall = 3;
+            dragonBall5.Visible = true;
+            dragonBall5.Left = 1306;
+            dragonBall5.Top = 339;
             goku.Top = 65;
             goku.Visible = true ;
             pictureBox5.Visible = true ;
             niveau = 2;
             goku.Left = 10;
-            pictureBox1.Left = 1600;
             pictureBox2.Left = 1600;
             pictureBox2.Visible = true;
             pictureBox3.Left = 1600;
@@ -285,6 +312,14 @@ namespace Djilali_YahiaB_WFA
             pictureBox4.Left = 1200;
             pictureBox4.Top = 172;
             pictureBox4.Visible = true;
+            pictureBox1.Visible = true;
+            pictureBox1.Left = 1153;
+            pictureBox1.Top = 417;
+
+        }
+        private void niveauBoss(object sender, EventArgs e) //niveau2 initialisation
+        {
+            
 
         }
         private void consignes(object sender, EventArgs e) //prise d'informations du jeux 

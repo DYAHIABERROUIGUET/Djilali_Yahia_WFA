@@ -50,6 +50,7 @@
             this.ennemiBG = new System.Windows.Forms.PictureBox();
             this.gameoverPic = new System.Windows.Forms.PictureBox();
             this.dragonBall4 = new System.Windows.Forms.PictureBox();
+            this.dragonBall5 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.goku)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.options)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxConsignes)).BeginInit();
@@ -68,6 +69,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ennemiBG)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gameoverPic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dragonBall4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dragonBall5)).BeginInit();
             this.SuspendLayout();
             // 
             // horloge
@@ -135,7 +137,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Djilali_YahiaB_WFA.Properties.Resources.sol1;
-            this.pictureBox1.Location = new System.Drawing.Point(427, 433);
+            this.pictureBox1.Location = new System.Drawing.Point(446, 433);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(219, 61);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -304,6 +306,18 @@
             this.dragonBall4.TabStop = false;
             this.dragonBall4.Visible = false;
             // 
+            // dragonBall5
+            // 
+            this.dragonBall5.BackColor = System.Drawing.Color.Transparent;
+            this.dragonBall5.Image = global::Djilali_YahiaB_WFA.Properties.Resources.dragonBall__4_;
+            this.dragonBall5.Location = new System.Drawing.Point(1306, 339);
+            this.dragonBall5.Name = "dragonBall5";
+            this.dragonBall5.Size = new System.Drawing.Size(41, 40);
+            this.dragonBall5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.dragonBall5.TabIndex = 20;
+            this.dragonBall5.TabStop = false;
+            this.dragonBall5.Visible = false;
+            // 
             // attaque1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -311,6 +325,7 @@
             this.BackgroundImage = global::Djilali_YahiaB_WFA.Properties.Resources.debutBackground;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1477, 688);
+            this.Controls.Add(this.dragonBall5);
             this.Controls.Add(this.dragonBall4);
             this.Controls.Add(this.gameoverPic);
             this.Controls.Add(this.ennemiBG);
@@ -354,6 +369,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ennemiBG)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gameoverPic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dragonBall4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dragonBall5)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -381,6 +397,7 @@
         private System.Windows.Forms.PictureBox ennemiBG;
         private System.Windows.Forms.PictureBox gameoverPic;
         private System.Windows.Forms.PictureBox dragonBall4;
+        private System.Windows.Forms.PictureBox dragonBall5;
     }
 }
 
