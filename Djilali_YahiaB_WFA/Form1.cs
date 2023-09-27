@@ -13,10 +13,10 @@ namespace Djilali_YahiaB_WFA
 {
     public partial class attaque1 : Form
     {
-        bool startBegin = false, jump = false, gokuDroite = false, gokuGauche = false;
+        bool startBegin = false, jump = false, gokuDroite = false, gokuGauche = false, gokuBas = false;
 
-        int temps = 0, saut = 10, kintoUNRestart = 0, nombreDragonBall = 0, meha = 10, attDroite = 1, recul = 5;
-        bool gravité = false, startGame = false, kameha = false;
+        int temps = 0, saut = 10, kintoUNRestart = 0, nombreDragonBall = 0, meha = 10, attDroite = 1, recul = 5,niveau = 0;
+        bool gravité = false, startGame = false, kameha = false, ennemieActif = false, returnEnnemi = false, tryGameover = false;
 
         private void secondTimer_Tick(object sender, EventArgs e)
         {
@@ -78,6 +78,49 @@ namespace Djilali_YahiaB_WFA
                     recul = 5;
                 }
             }
+            if (ennemieActif == true && returnEnnemi == false)
+            {
+                if (ennemiBG.Right < pictureBox3.Right)
+                {
+                    ennemiBG.Left += 8;
+
+                }else if (ennemiBG.Right >= pictureBox3.Right) {
+                    returnEnnemi = true;
+                }
+
+            }else if (ennemieActif == true && returnEnnemi == true)
+            {
+                ennemiBG.Left -= 8;
+                if (ennemiBG.Left < 0)
+                {
+                    returnEnnemi = false;
+                }
+            }
+            if (ennemiBG.Bounds.IntersectsWith(attaque.Bounds) && ennemieActif == true)
+            {
+                dragonBall4.Left = ennemiBG.Left ;
+                dragonBall4.Top = ennemiBG.Top ;
+                dragonBall4.Visible = true;
+                ennemieActif = false;
+                ennemiBG.Left = -100;
+                ennemiBG.Visible = false;
+                
+            }
+            if (ennemiBG.Bounds.IntersectsWith(goku.Bounds) && ennemieActif == true)
+            {
+                gameover(sender, e);
+            }
+        }
+
+        private void gameover(object sender, EventArgs e)
+        {
+            gameoverPic.Top = 100;
+            goku.Visible = false;
+            pictureBox3.Visible = false;
+            pictureBox5.Visible = false;
+            ennemiBG.Visible=false;
+            gameoverPic.Visible=true;
+            tryGameover = true;
         }
 
         public attaque1()
@@ -124,6 +167,12 @@ namespace Djilali_YahiaB_WFA
                 nombreDragonBall += 1;
                 dragonBall3.Left = 5000;
             }
+            if (goku.Bounds.IntersectsWith(dragonBall4.Bounds))
+            {
+                dragonBall4.Visible = false;
+                nombreDragonBall += 1;
+                dragonBall4.Left = 5000;
+            }
             if (goku.Bounds.IntersectsWith(kintoUn.Bounds) && goku.Bottom - 1 == kintoUn.Top)
             {
                 gravité = false;
@@ -135,6 +184,11 @@ namespace Djilali_YahiaB_WFA
                 kintoUn.Top += 5;
                 kintoUNRestart -= 5 ;
             }
+            if (gokuBas == true)
+            {
+                goku.Top += 4;
+            }
+
             if (gokuDroite == true)
             {
                 goku.Left = goku.Left + 10;
@@ -166,7 +220,11 @@ namespace Djilali_YahiaB_WFA
             else if (goku.Bounds.IntersectsWith(pictureBox2.Bounds) && goku.Bottom - 1 == pictureBox2.Top)
             {
                 gravité = false;
+            }else if (goku.Bounds.IntersectsWith(attaque.Bounds) && goku.Bottom - 1 == attaque.Top)
+            {
+                gravité = false;
             }
+
             else if (goku.Bounds.IntersectsWith(pictureBox3.Bounds) && goku.Bottom - 1 == pictureBox3.Top)
             {
                 gravité = false;
@@ -181,13 +239,34 @@ namespace Djilali_YahiaB_WFA
             } else { 
             gravité = true;
             }
+            if (goku.Top >= 690)
+            {
+                tryGameover = true;
+                goku.Visible = false;
+                pictureBox1.Visible = false;
+                pictureBox2.Visible = false;
+                pictureBox4.Visible = false;
+                pictureBox5.Visible = false;
+                sol.Visible = false;
+                kintoUn.Visible = false;
+                dragonBall1.Visible = false;
+                score.Visible = false;
+                dragonBall2.Visible = false;
+                dragonBall3.Visible = false;
+                gameover(sender, e);
+            }
 
         }
         private void niveau2(object sender, EventArgs e) //niveau2 initialisation
         {
+            goku.Top = 65;
+            goku.Visible = true ;
+            pictureBox5.Visible = true ;
+            niveau = 2;
             goku.Left = 10;
             pictureBox1.Left = 1600;
             pictureBox2.Left = 1600;
+            pictureBox2.Visible = true;
             pictureBox3.Left = 1600;
             pictureBox4.Left = 1600;
             pictureBox5.Left = 0;
@@ -195,8 +274,17 @@ namespace Djilali_YahiaB_WFA
             sol.Top = 1000;
             pictureBox3.Top = 519;
             pictureBox3.Left = -32;
-            kintoUn.Visible = false;
-            kintoUn.Left = 1600;
+            ennemiBG.Left = 0;
+            ennemiBG.Top = 420;
+            ennemiBG.Visible = true;
+            pictureBox3.Visible = true;
+            kintoUn.Visible = true;
+            kintoUn.Left = 800;
+            kintoUn.Top = 520; 
+            ennemieActif = true;
+            pictureBox4.Left = 1200;
+            pictureBox4.Top = 172;
+            pictureBox4.Visible = true;
 
         }
         private void consignes(object sender, EventArgs e) //prise d'informations du jeux 
@@ -208,12 +296,14 @@ namespace Djilali_YahiaB_WFA
         }
         private void debutJeux(object sender, EventArgs e) //lancement du jeux 
         {
+            dragonBall4.Left = -300;
+            goku.Top = 397;
+            goku.Left = 100;
             start.Visible = false;
             pictureBoxConsignes.Visible = false;
             goku.Visible = true;
             pictureBox1.Visible = true;
-            pictureBox2.Visible = true;
-            pictureBox3.Visible = true;    
+            pictureBox2.Visible = true; 
             pictureBox4.Visible = true;
             pictureBox5.Visible = true;
             sol.Visible = true;
@@ -222,6 +312,8 @@ namespace Djilali_YahiaB_WFA
             score.Visible = true;
             dragonBall2.Visible = true;
             dragonBall3.Visible = true;
+            attaque.Left = -1000;
+
         }
 
         private void options_Click(object sender, EventArgs e) //quand on rentre dans le menu option
@@ -240,6 +332,12 @@ namespace Djilali_YahiaB_WFA
             {
                 gokuGauche = false;
                 goku.Load("C:\\Users\\djila\\OneDrive\\Bureau\\ProjectPurple\\Djilali_YahiaB_WFA\\gokuBaseGauche.png");
+            }
+            else if (e.KeyCode == Keys.S)
+            {
+
+                gokuBas = false;
+
             }
         }
 
@@ -265,6 +363,12 @@ namespace Djilali_YahiaB_WFA
                 }
 
             }
+            else if (e.KeyCode == Keys.S)
+            {
+
+                gokuBas = true;
+
+            }
             else if (e.KeyCode == Keys.Space && gravité == false)
             {
                     jump = true;
@@ -273,6 +377,20 @@ namespace Djilali_YahiaB_WFA
             else if (e.KeyCode == Keys.E && kameha == false)
             {
                 kameha = true;
+
+            }
+            if (e.KeyCode == Keys.R && tryGameover == true)
+            {
+                tryGameover = false;
+                if (niveau == 2)
+                {
+                    gameoverPic.Visible = false;
+                    niveau2(sender, e);
+                }else if (niveau == 0) {
+                    gameoverPic.Visible = false;
+                    goku.Visible = true;
+                    debutJeux(sender, e);
+                }
 
             }
         }
